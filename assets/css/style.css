@@ -145,7 +145,7 @@ p {
   z-index: 5;
   -webkit-transition: all 0.4s ease-out 0s;
   transition: all 0.4s ease-out 0s;
-  background-color: #2e45d3;
+  background-color: #00a873;
 }
 
 @media (max-width: 767px) {
@@ -280,7 +280,7 @@ p {
   height: 100%;
   border-style: solid;
   /* Spinner Color */
-  border-color: #2e45d3 #2e45d3 #F7F8F9;
+  border-color: #00a873 #00a873 #F7F8F9;
   border-radius: 50%;
   border-width: 6px;
 }
@@ -694,7 +694,7 @@ p {
 
 .navbar-nav .nav-item .sub-menu li a.active, .navbar-nav .nav-item .sub-menu li a:hover {
   padding-left: 25px;
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .navbar-nav .sub-nav-toggler {
@@ -974,7 +974,7 @@ p {
 }
 
 .header_hero_content .header_title span {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .header_hero_content p {
@@ -1065,7 +1065,7 @@ p {
 }
 
 .single_features.features_2 .features_icon i {
-  background-color: #2e45d3;
+  background-color: #00a873;
 }
 
 .single_features.features_3 .features_icon i {
@@ -1169,7 +1169,7 @@ p {
 }
 
 .single_app_features.app_features_4 .app_features_icon i {
-  background-color: #2e45d3;
+  background-color: #00a873;
 }
 
 .app_features_image {
@@ -1270,7 +1270,7 @@ p {
 }
 
 .video_image .play:hover {
-  background: #2e45d3;
+  background: #00a873;
   color: #fff;
 }
 
@@ -1483,7 +1483,7 @@ p {
 }
 
 .screenshot_active .slick-arrow:hover i {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 /*===========================
@@ -1535,7 +1535,7 @@ p {
 
 .single_testimonial_content i {
   font-size: 66px;
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .single_testimonial_content p {
@@ -1578,7 +1578,7 @@ p {
 }
 
 .testimonial_content_active .slick-arrow:hover i {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 /*===========================
@@ -1659,11 +1659,11 @@ p {
 }
 
 .single_pricing.pricing_color_2 .pricing_top_bar i {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .single_pricing.pricing_color_2 .pricing_top_bar .price {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .single_pricing.pricing_color_3 .pricing_top_bar i {
@@ -1679,9 +1679,9 @@ p {
 }
 
 .single_pricing.pricing_active .pricing_btn .main-btn {
-  background-color: #2e45d3;
+  background-color: #00a873;
   color: #fff;
-  border-color: #2e45d3;
+  border-color: #00a873;
 }
 
 .single_pricing.pricing_active .pricing_btn .main-btn:hover {
@@ -1813,7 +1813,7 @@ p {
 
 .download_app_content ul li a .icon i {
   font-size: 25px;
-  color: #2e45d3;
+  color: #00a873;
 }
 
 @media (max-width: 767px) {
@@ -1920,7 +1920,7 @@ p {
 }
 
 .single_blog .blog_content .blog_title a:hover {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .single_blog .blog_content .main-btn {
@@ -1929,13 +1929,13 @@ p {
   line-height: 36px;
   border: 2px solid;
   padding: 0 15px;
-  color: #2e45d3;
-  border-color: #2e45d3;
+  color: #00a873;
+  border-color: #00a873;
   background: #fff;
 }
 
 .single_blog .blog_content .main-btn:hover {
-  background-color: #2e45d3;
+  background-color: #00a873;
   color: #fff;
 }
 
@@ -2054,7 +2054,7 @@ p {
 
 .footer_social ul li a:hover {
   background-color: #fff;
-  color: #2e45d3;
+  color: #00a873;
 }
 
 .footer_copyright p {
@@ -2068,7 +2068,7 @@ p {
 }
 
 .footer_copyright p a:hover {
-  color: #2e45d3;
+  color: #00a873;
 }
 
 /*===== BACK TO TOP =====*/
@@ -2082,7 +2082,7 @@ p {
   height: 45px;
   line-height: 45px;
   border-radius: 5px;
-  background-color: #2e45d3;
+  background-color: #00a873;
   text-align: center;
   z-index: 99;
   -webkit-transition: all 0.3s ease-out 0s;
@@ -2092,7 +2092,7 @@ p {
 
 .back-to-top:hover {
   color: #fff;
-  background-color: #2e45d3;
+  background-color: #00a873;
 }
 /*# sourceMappingURL=style.css.map */
 .youtube-size {
