@@ -2124,3 +2124,20 @@ p {
   transition: all 0.3s ease-out 0s;
   min-height: 75px;
 }
+
+
+/*===========================
+      13. CUSTOMIZE
+===========================*/
+.sponer img {
+  width: 200px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .sponer img {
+    width: 100%;
+  }
+}
