@@ -98,46 +98,6 @@ $(function() {
       }
     });
     
-    
-    $('.screenshot_active').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: true,
-        pauseOnHover: false,
-        prevArrow: '<span class="prev"><i class="lni lni-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="lni lni-arrow-right"></i></span>',
-        responsive: [
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 2,
-              }
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 3,
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-              }
-            },
-            {
-              breakpoint: 576,
-              settings: {
-                slidesToShow: 1,
-              }
-            }
-        ]
-    });
-    
-    
     //===== Back to top
     
      $('.testimonial_author_active').slick({
