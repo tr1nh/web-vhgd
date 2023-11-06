@@ -2129,6 +2129,10 @@ p {
 /*===========================
       13. CUSTOMIZE
 ===========================*/
+.sponer {
+  gap: 1em;
+}
+
 .sponer img {
   width: 200px;
   background-color: #fff;
@@ -2136,7 +2140,12 @@ p {
   padding: 10px;
 }
 
-@media (max-width: 767px) {
+@media only screen and (max-width: 767px) {
+  .sponer {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
   .sponer img {
     width: 100%;
   }

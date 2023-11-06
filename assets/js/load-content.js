@@ -1,11 +1,32 @@
-fetchSheet.fetch({
-  gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
-  wSheetName: "posts",
-}).then((rows) => {
-  let postHtml = "";
+fetchSheet
+  .fetch({
+    gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
+    wSheetName: "gallery",
+  })
+  .then((rows) => {
+    let galleryHtml = "";
 
-  rows.forEach((row) => {
-    postHtml += `
+    rows.forEach((row) => {
+      galleryHtml += `
+        <div class="single_slider">
+          <img src="${row.imageUrl}" alt="Screen Shot" />
+        </div>
+      `;
+    });
+
+    document.querySelector("#gallery").innerHTML = galleryHtml;
+  });
+
+fetchSheet
+  .fetch({
+    gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
+    wSheetName: "posts",
+  })
+  .then((rows) => {
+    let postHtml = "";
+
+    rows.forEach((row) => {
+      postHtml += `
       <div class="col-lg-4 col-md-8">
         <div class="single_blog blog_1 mt-30 wow fadeInUp" data-wow-duration="1.3s" data-wow-delay="0.2s">
           <div class="blog_image">
@@ -26,18 +47,20 @@ fetchSheet.fetch({
         </div>
       </div>
     `;
+    });
+
+    document.querySelector("#blog-items").innerHTML = postHtml;
   });
 
-  document.querySelector("#blog-items").innerHTML = postHtml;
-});
-
-fetchSheet.fetch({
-  gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
-  wSheetName: "timeline",
-}).then((rows) => {
-  let timelineHtml = "";
-  rows.forEach((row) => {
-    timelineHtml += `
+fetchSheet
+  .fetch({
+    gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
+    wSheetName: "timeline",
+  })
+  .then((rows) => {
+    let timelineHtml = "";
+    rows.forEach((row) => {
+      timelineHtml += `
     <div class="py-3 col-lg-4 col-md-8 col-sm-10">
       <div
         class="h-100 single_pricing text-center pricing_color_1 wow fadeInUp"
@@ -52,18 +75,18 @@ fetchSheet.fetch({
           <ul>
     `;
 
-    row.detail.split("\n").forEach((detail) => {
-      try {
-      let target = /([^:-]*): (.*)/g.exec(detail);
-      let time = target[1];
-      let evnt = target[2];
+      row.detail.split("\n").forEach((detail) => {
+        try {
+          let target = /([^:-]*): (.*)/g.exec(detail);
+          let time = target[1];
+          let evnt = target[2];
 
-      timelineHtml += `<li><strong style="color: #00a873">${time}:&nbsp;</strong>${evnt}</li>`;
-      } catch (error) {}
+          timelineHtml += `<li><strong style="color: #00a873">${time}:&nbsp;</strong>${evnt}</li>`;
+        } catch (error) {}
+      });
+
+      timelineHtml += `</ul></div></div></div>`;
     });
 
-    timelineHtml += `</ul></div></div></div>`;
+    document.querySelector("#timeline").innerHTML = timelineHtml;
   });
-
-  document.querySelector("#timeline").innerHTML = timelineHtml;
-});
