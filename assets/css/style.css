@@ -2129,6 +2129,15 @@ p {
 /*===========================
       13. CUSTOMIZE
 ===========================*/
+
+#header-app img {
+  transform: scale(70%);
+}
+
+#pricing .title {
+  white-space: nowrap;
+}
+
 .sponer {
   gap: 1em;
 }
@@ -2140,7 +2149,20 @@ p {
   padding: 10px;
 }
 
+.participant-logo {
+  width: 200px;
+  aspect-ratio: 1/1;
+}
+
 @media only screen and (max-width: 767px) {
+  #header-app img {
+    transform: scale(100%);
+  }
+
+  #pricing .title {
+    white-space: normal;
+  }
+
   .sponer {
     display: grid;
     grid-template-columns: auto auto;

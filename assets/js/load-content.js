@@ -1,6 +1,54 @@
 fetchSheet
   .fetch({
     gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
+    wSheetName: "logo",
+  })
+  .then((rows) => {
+    let html = "";
+
+    rows.forEach((row) => {
+      console.log(row);
+      html += `
+      <img class="participant-logo" src=${row.logoUrl} alt="${row.logoUrl}">
+      `;
+    });
+
+    document.querySelector("#participant").innerHTML = html;
+
+    $("#participant").slick({
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      prevArrow: false,
+      nextArrow: false,
+
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
+  });
+
+fetchSheet
+  .fetch({
+    gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
     wSheetName: "header",
   })
   .then((rows) => {
@@ -35,42 +83,43 @@ fetchSheet
 
     document.querySelector("#gallery").innerHTML = galleryHtml;
 
-    $('.screenshot_active').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        arrows: true,
-        pauseOnHover: false,
-        prevArrow: '<span class="prev"><i class="lni lni-arrow-left"></i></span>',
-        nextArrow: '<span class="next"><i class="lni lni-arrow-right"></i></span>',
-        responsive: [
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 2,
-              }
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 3,
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 2,
-              }
-            },
-            {
-              breakpoint: 576,
-              settings: {
-                slidesToShow: 1,
-              }
-            }
-        ]
+    $(".screenshot_active").slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      pauseOnHover: false,
+      prevArrow: '<span class="prev"><i class="lni lni-arrow-left"></i></span>',
+      nextArrow:
+        '<span class="next"><i class="lni lni-arrow-right"></i></span>',
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
     });
   });
 
