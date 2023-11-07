@@ -1,6 +1,25 @@
 fetchSheet
   .fetch({
     gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
+    wSheetName: "header",
+  })
+  .then((rows) => {
+    let imageUrl = rows[0].imageUrl || "assets/images/header_app.png";
+    document.querySelector("#header-app").innerHTML = `
+          <div
+            class="image wow fadeInRightBig"
+            data-wow-duration="1.3s"
+            data-wow-delay="1.8s"
+          >
+            <img src="${imageUrl}" alt="header App" />
+            <img src="assets/images/dots.svg" alt="dots" class="dots" />
+          </div>
+`;
+  });
+
+fetchSheet
+  .fetch({
+    gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
     wSheetName: "gallery",
   })
   .then((rows) => {

@@ -2096,8 +2096,8 @@ p {
 }
 /*# sourceMappingURL=style.css.map */
 .youtube-size {
-  width: 1080px;
-  height: 610px;
+  width: 100%;
+  aspect-ratio: 16/9;
 }
 
 @media only screen and (max-width: 48em) {
