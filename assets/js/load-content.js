@@ -7,7 +7,6 @@ fetchSheet
     let html = "";
 
     rows.forEach((row) => {
-      console.log(row);
       html += `
       <img class="participant-logo" src=${row.logoUrl} alt="${row.logoUrl}">
       `;
@@ -195,4 +194,13 @@ fetchSheet
     });
 
     document.querySelector("#timeline").innerHTML = timelineHtml;
+  });
+
+fetchSheet
+  .fetch({
+    gSheetId: "1agAmMH3RN6_dGXSCmjx-HDXDmZBGe7Ia80V7QECrknU",
+    wSheetName: "video",
+  })
+  .then((rows) => {
+    document.querySelector("#video iframe").src = rows[0].videoUrl;
   });
