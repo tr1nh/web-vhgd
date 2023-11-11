@@ -2134,6 +2134,10 @@ p {
   transform: scale(70%);
 }
 
+.image-donors {
+  border-radius: 10px;
+}
+
 #pricing .title {
   white-space: nowrap;
 }
