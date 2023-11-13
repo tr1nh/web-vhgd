@@ -191,20 +191,20 @@
                   ĐỒNG NAI.
                 </p>
                 <img
-                  src="assets/images/donors.jpg"
+                  src="assets/images/z4872440731371_23d130c3ddbee664adb9edc308bc7284.jpg"
                   alt=""
                   class="mt-4 image-donors"
                 />
                 <p> PHÒNG GIÁO DỤC ĐÀO TẠO THÀNH PHỐ - TRUNG TÂM VĂN HOÁ THÔNG TIN THỂ THAO THÀNH PHỐ - THÀNH ĐOÀN BIÊN HOÀ - PHÒNG Y TẾ THÀNH PHỐ - PHÒNG VĂN HOÁ THÔNG TIN THÀNH PHỐ </p>
                 <ul>
                   <li>
-                    <a
+                    <a id ="appDownloadUrl"
                       target="_blank"
                       class="main-btn wow fadeInUp"
                       data-wow-duration="1.3s"
                       data-wow-delay="1s"
                       href="https://play.google.com/store/apps/details?id=vn.vnpt.digo.DongNaiCitizen"
-                      >Biên Hòa Smartcity</a
+                      >Biên Hòa SmartCity</a
                     >
                   </li>
 
@@ -266,6 +266,12 @@
             </div>
           </div>
           <!-- row -->
+          <script>
+            var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            if ((/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream)) {
+              document.getElementById("appDownloadUrl").href = "https://apps.apple.com/vn/app/bi%C3%AAn-ho%C3%A0-smartcity/id1537750069";
+            }
+          </script>
         </div>
         <!-- container -->
         <div
