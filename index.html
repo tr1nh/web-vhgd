@@ -80,7 +80,7 @@
             <div class="col-lg-12">
               <nav class="navbar navbar-expand-lg d-flex flex-nowrap">
                 <a class="navbar-brand" href="index.html">
-                  <img src="assets/images/logo.png" alt="Logo" />
+                  <img src="" alt="Logo" />
                 </a>
                 <button
                   class="navbar-toggler"
@@ -142,6 +142,10 @@
       <!-- header navbar -->
 
       <div id="home" class="header_hero d-lg-flex align-items-center">
+        <svg id="header_shape" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1366 850" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M1366 0H0V662.5C8 770.667 101.3 946.2 410.5 783C719.7 619.8 1176.33 366.333 1366 260V0Z" fill="url(#decorator-bg)" />
+        </svg>
+
         <img
           class="shape shape-1"
           src="assets/images/shape-1.svg"
@@ -179,7 +183,7 @@
                   alt=""
                   class="mt-4 image-donors"
                 />
-                <ul>
+                <ul id="nav-2">
                   <li>
                     <a
                       id="appDownloadUrl"
@@ -347,7 +351,7 @@
         <div class="col-lg-11 mx-auto">
           <iframe
             class="youtube-size"
-            src="https://www.youtube.com/embed/dOUlwQ0tcSM?si=oQ41i_stEyEX9N5M"
+            src="https://www.youtube.com/embed/fqY5k0Mf0G8"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -367,6 +371,10 @@
       id="screenshot"
       class="screenshot_area d-lg-flex align-items-center"
     >
+      <svg id="screenshot_shape" preserveAspectRatio="xMidYMid slice" viewBox="0 0 801 715" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M801 715V0C572.5 168.833 99.5999 520.3 35.9999 575.5C-27.6001 630.7 9.4999 691.5 35.9999 715H801Z" fill="url(#decorator-bg)"/>
+      </svg>
+
       <div class="container">
         <div class="row">
           <div class="col-lg-6">
@@ -531,6 +539,10 @@
     <!--- FOOTER PART START --->
 
     <section id="footer" class="footer_area pt-75 pb-80">
+      <svg id="footer_shape" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1360 852" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M1360 852H0V593C209.833 476.333 698.4 205.9 974 57.5C1249.6 -90.9 1346.17 84 1360 190V852Z" fill="url(#decorator-bg)" />
+      </svg>
+
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-7">
@@ -631,6 +643,15 @@
 
     <!--- BACK TOP TOP PART ENDS --->
 
+    <svg style="display:block; height:0;">
+      <defs>
+        <linearGradient id="decorator-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+          <stop offset="5%" stop-color="slateblue" />
+          <stop offset="95%" stop-color="lightskyblue" />
+        </linearGradient>
+      </defs>
+    </svg>
+
     <!--- Jquery js --->
     <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
     <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
@@ -647,14 +668,14 @@
 
     <!--- Scrolling Nav js --->
     <script src="assets/js/jquery.easing.min.js"></script>
-    <script src="assets/js/scrolling-nav.js"></script>
 
     <!--- wow js --->
     <script src="assets/js/wow.min.js"></script>
 
     <!--- Main js --->
-    <script src="assets/js/main.js"></script>
     <script src="assets/js/fetch-sheet.js"></script>
     <script src="assets/js/load-content.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/v-stats.js"></script>
   </body>
 </html>

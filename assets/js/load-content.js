@@ -1,6 +1,23 @@
+const GS_ID = "1ota9L8ZiiQfMo9poZ0rrYfUzT0X8hvnQ8zSSw2W8_ek";
+
+// load colors
 fetchSheet
   .fetch({
-    gSheetId: "1ota9L8ZiiQfMo9poZ0rrYfUzT0X8hvnQ8zSSw2W8_ek",
+    gSheetId: GS_ID,
+    wSheetName: "colors",
+  })
+  .then((rows) => {
+    rows.forEach(row => document.documentElement.style.setProperty("--color-" + row.id, row.color));
+
+    // also update svg colors
+    document.querySelector("#decorator-bg > stop:nth-child(1)").setAttribute("stop-color", rows.find(row => row.id == "gradient-1").color);
+    document.querySelector("#decorator-bg > stop:nth-child(2)").setAttribute("stop-color", rows.find(row => row.id == "gradient-2").color);
+  });
+
+// load content
+fetchSheet
+  .fetch({
+    gSheetId: GS_ID,
     wSheetName: "sum",
   })
   .then((rows) => {
@@ -9,6 +26,72 @@ fetchSheet
       let key = row.section;
       Object(content).hasOwnProperty(key) || Object.assign(content, { [key]: [] });
       content[key].push(row);
+    });
+
+    // logo
+    let logos = content.logo[0];
+    $(".header_navbar img").attr("src", logos.logo1);
+    $(window).on("scroll", function (event) {
+      var scroll = $(window).scrollTop();
+      if (scroll < 20) {
+        $(".header_navbar").removeClass("sticky");
+        $(".header_navbar img").attr("src", logos.logo1);
+      } else {
+        $(".header_navbar").addClass("sticky");
+        $(".header_navbar img").attr("src", logos.logo2);
+      }
+    });
+
+    // nav items
+    let navHtml = "";
+    let nav2Html = `
+      <li>
+        <a
+          id="appDownloadUrl"
+          target="_blank"
+          class="main-btn wow fadeInUp"
+          data-wow-duration="1.3s"
+          data-wow-delay="1s"
+          href="https://play.google.com/store/apps/details?id=vn.vnpt.digo.DongNaiCitizen"
+          >Biên Hòa SmartCity</a
+        >
+      </li>`;
+
+    content.nav.forEach(row => {
+      navHtml += `
+        <li class="nav-item">
+          <a class="page-scroll" href="${row.navLink}" target="${row.navTarget}">${row.navName}</a>
+        </li>
+      `;
+
+      nav2Html += `
+        <li>
+          <a
+            class="main-btn main-btn-2 wow fadeInUp page-scroll"
+            data-wow-duration="1.3s"
+            data-wow-delay="1.4s"
+            href="${row.navLink}"
+            target="${row.navTarget}"
+            >${row.navName}</a
+          >
+        </li>
+      `;
+    });
+    document.querySelector("#nav").innerHTML = navHtml;
+    document.querySelector("#nav-2").innerHTML = nav2Html;
+
+    $(function () {
+      $('a.page-scroll[href*="#"]:not([href="#"])').on("click", function () {
+        if (location.pathname.replace(/^\//, "") == this.pathname.replace(/^\//, "") && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $("[name=" + this.hash.slice(1) + "]");
+
+          if (target.length) {
+            $("html, body").animate({ scrollTop: target.offset().top - 50, }, 1200, "easeInOutExpo");
+            return false;
+          }
+        }
+      });
     });
 
     // header
@@ -38,10 +121,10 @@ fetchSheet
           class="h-100 single_pricing text-center pricing_color_1 wow fadeInUp"
           data-wow-duration="1.3s"
           data-wow-delay="0.2s"
-          style="border-top: 3px solid #00a873">
+          style="border-top: 3px solid var(--color-1)">
           <div class="pricing_top_bar">
-            <h4 class="title" style="color: #00a873">Ngày</h4>
-            <span class="price" style="color: #00a873">${row.eventDate }</span>
+            <h4 class="title" style="color: var(--color-1)">Ngày</h4>
+            <span class="price" style="color: var(--color-1)">${row.eventDate }</span>
           </div>
           <div class="pricing_list px-4 text-left">
             <ul>
@@ -53,7 +136,7 @@ fetchSheet
           let time = target[1];
           let evnt = target[5];
 
-          timelineHtml += `<li><strong style="color: #00a873">${time}:&nbsp;</strong>${evnt}</li>`;
+          timelineHtml += `<li><strong style="color: var(--color-1)">${time}:&nbsp;</strong>${evnt}</li>`;
         } catch (error) {
           timelineHtml += `<li>${detail}</li>`;
         }
@@ -140,6 +223,33 @@ fetchSheet
     });
 
     document.querySelector("#blog-items").innerHTML = postHtml;
+
+    $("#blog-items").slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      arrows: true,
+      // dots: true,
+      speed: 300,
+      infinite: true,
+      autoplaySpeed: 2000,
+      prevArrow: '<span class="prev"></span>',
+      nextArrow: '<span class="next"><i class="lni lni-arrow-right"></i></span>',
+      autoplay: true,
+      responsive: [
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 3,
+          },
+        },
+        {
+          breakpoint: 767,
+          settings: {
+            slidesToShow: 1,
+          },
+        },
+      ],
+    });
 
     // footer
     document.querySelector("#footer").outerHTML = content.footer[0].html.replaceAll(/""/g, "\"");
