@@ -148,7 +148,33 @@ fetchSheet
     document.querySelector("#timeline").innerHTML = timelineHtml;
 
     // video
-    document.querySelector("#video iframe").src = content.video[0].resourceUrl ;
+    let videoHtml = "";
+    content.video.forEach(row => {
+      videoHtml += `
+        <div class="video-item-container" title="${row.title}">
+          <iframe
+            src="${row.resourceUrl}"
+            title="${row.title}"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      `;
+    });
+    document.querySelector("#video div:nth-child(2)").innerHTML = videoHtml;
+
+    $("#video div:nth-child(2)").slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      pauseOnHover: false,
+      prevArrow: '<span class="prev"><i class="lni lni-arrow-left"></i></span>',
+      nextArrow: '<span class="next"><i class="lni lni-arrow-right"></i></span>',
+    });
 
     // gallery
     let galleryHtml = "";
